@@ -1,103 +1,131 @@
-import Image from "next/image";
+// app/page.tsx
+"use client";
+
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
+import AyurvedicTools from "@/components/home/AyurvedicTools";
+import MealForm from "@/components/home/MealForm";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Flame,
+  Wind,
+  Droplets,
+  Leaf,
+  BookOpen,
+  GraduationCap,
+  Sparkles,
+  Heart,
+  ClipboardList
+} from "lucide-react";
+import Link from "next/link";
+
+
+// Reusable component for consistent section headings
+const SectionHeader = ({ title, subtitle }) => (
+    <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-900">{title}</h2>
+        <p className="text-gray-600 mt-4">{subtitle}</p>
+    </div>
+);
+
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen bg-[#fdfcfb] font-sans">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="text-center py-20 md:py-28 px-6">
+          <div className="max-w-3xl mx-auto">
+             <h1 className="text-4xl md:text-5xl font-bold text-green-900 leading-tight">
+                Harmonize Your Diet with Ancient Wisdom
+             </h1>
+             <p className="text-lg text-gray-600 mt-6 mb-8">
+                Discover if your meals align with Ayurvedic principles. Our AI-powered tools provide personalized guidance for your unique mind-body constitution.
+             </p>
+             <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 rounded-lg text-lg font-semibold shadow-lg">
+                <Link href="/dosh-quiz">TAKE THE DOSHA QUIZ</Link>
+             </Button>
+          </div>
+        </section>
+
+        {/* Dosha Types Section */}
+        <section className="py-20 bg-white">
+            <div className="max-w-5xl mx-auto px-6">
+                <SectionHeader 
+                    title="Understand Your Constitution" 
+                    subtitle="Ayurveda is based on the three fundamental energies, or doshas, that govern our physical and mental characteristics. Discovering your dominant dosha is the first step toward personalized wellness."
+                />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <Card className="border-blue-200 bg-blue-50/50 hover:shadow-lg transition-shadow">
+                      <CardContent className="text-center p-6"><Wind className="w-10 h-10 mx-auto text-blue-500" /><h3 className="text-xl font-semibold mt-4 text-blue-700">Vata</h3><p className="text-gray-600">Movement & Communication</p><p className="text-sm text-gray-500 italic mt-1">Air + Space Elements</p></CardContent>
+                    </Card>
+                    <Card className="border-orange-200 bg-orange-50/50 hover:shadow-lg transition-shadow">
+                      <CardContent className="text-center p-6"><Flame className="w-10 h-10 mx-auto text-orange-500" /><h3 className="text-xl font-semibold mt-4 text-orange-700">Pitta</h3><p className="text-gray-600">Metabolism & Transformation</p><p className="text-sm text-gray-500 italic mt-1">Fire + Water Elements</p></CardContent>
+                    </Card>
+                    <Card className="border-green-200 bg-green-50/50 hover:shadow-lg transition-shadow">
+                      <CardContent className="text-center p-6"><Droplets className="w-10 h-10 mx-auto text-green-500" /><h3 className="text-xl font-semibold mt-4 text-green-700">Kapha</h3><p className="text-gray-600">Structure & Lubrication</p><p className="text-sm text-gray-500 italic mt-1">Earth + Water Elements</p></CardContent>
+                    </Card>
+                </div>
+            </div>
+        </section>
+
+        {/* How It Works Section (featuring MealForm) */}
+        <section className="py-20 bg-[#f3f8f6]">
+            <div className="max-w-5xl mx-auto px-6">
+                <SectionHeader 
+                    title="Check Your Meal's Compatibility in Seconds"
+                    subtitle="Our core tool helps you quickly assess if your current meal is beneficial for you. Simply describe your food and select the current season to get instant Ayurvedic feedback."
+                />
+                {/* MealForm is now framed within a proper section */}
+                <MealForm />
+            </div>
+        </section>
+
+        {/* Explore Tools Section (featuring AyurvedicTools) */}
+        <section className="py-20 bg-white">
+             <div className="max-w-6xl mx-auto px-6">
+                 <SectionHeader
+                    title="A Complete Suite of Ayurvedic Tools"
+                    subtitle="Go beyond meal checking. Explore our full range of tools designed to guide you on your wellness journey, from identifying your dosha to planning your meals."
+                 />
+                 <AyurvedicTools />
+            </div>
+        </section>
+
+        {/* Learn More Section */}
+        <section className="py-20 bg-stone-50">
+             <div className="max-w-5xl mx-auto px-6">
+                <SectionHeader
+                    title="Deepen Your Knowledge"
+                    subtitle="Wisdom is the foundation of wellness. Explore our in-depth guides to understand the core principles of Ayurveda and how to apply them to your life."
+                 />
+                <div className="grid md:grid-cols-2 gap-8">
+                    <Link href="/seasonal-guide" className="block bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow border">
+                        <div className="flex items-center gap-4">
+                            <GraduationCap className="w-10 h-10 text-orange-500" />
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-800">Seasonal Eating Guide</h3>
+                                <p className="text-gray-600 text-sm">Learn how to adapt your diet throughout the year to stay in harmony with nature.</p>
+                            </div>
+                        </div>
+                    </Link>
+                     <Link href="/ayurvedic-diet-guide" className="block bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow border">
+                        <div className="flex items-center gap-4">
+                            <BookOpen className="w-10 h-10 text-blue-500" />
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-800">Ayurvedic Diet Principles</h3>
+                                <p className="text-gray-600 text-sm">An in-depth guide to the rules, benefits, and core concepts of eating the Ayurvedic way.</p>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
     </div>
   );
 }
