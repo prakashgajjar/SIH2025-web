@@ -1,8 +1,6 @@
 // app/page.tsx
 "use client";
 
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
 import AyurvedicTools from "@/components/home/AyurvedicTools";
 import MealForm from "@/components/home/MealForm";
 import { Button } from "@/components/ui/button";
@@ -11,12 +9,10 @@ import {
   Flame,
   Wind,
   Droplets,
-  Leaf,
+
   BookOpen,
   GraduationCap,
-  Sparkles,
-  Heart,
-  ClipboardList
+
 } from "lucide-react";
 import Link from "next/link";
 

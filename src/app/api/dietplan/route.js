@@ -21,7 +21,7 @@ export async function POST(req) {
       avoidFoods,
     } = formData;
 
-    console.log(formData);
+    // console.log(formData);
 
     if (!dosha || !season || !durationDays) {
       return NextResponse.json(
@@ -91,7 +91,7 @@ Provide the JSON only.
     const response = await result.response;
     const text = await response.text();
 
-    console.log(text);
+    // console.log(text);
 
     try {
       const mealPlanJson = JSON.parse(text);

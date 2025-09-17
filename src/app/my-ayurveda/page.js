@@ -2,7 +2,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { BookOpen, Sprout, Wind, Flame, Mountain, Link as LinkIcon, CheckCircle, ChevronDown, Scale, Salad, Coffee } from 'lucide-react';
 
 // --- Data for the page ---

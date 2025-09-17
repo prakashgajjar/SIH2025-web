@@ -1,20 +1,11 @@
 // app/seasonal-guide/page.jsx
 
 'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
-import { 
-    Clock, Home, ChevronRight, Lightbulb, UtensilsCrossed, CheckSquare,
-    Sprout, Sun, Wind, Snowflake, Apple, Carrot, Wheat
-} from 'lucide-react';
 import MealPlannerForm from './MealPlanner';
 import MealPlanResultsPage from './MealPlanDisplay';
 import { useAppContext } from '@/hoocks/appContext';
 
-// --- Data for Seasonal Sections ---
-// In a real app, this data would come from a CMS or API.
-// IMPORTANT: Replace the `illustration` paths with your actual image paths in the /public folder.
+
 const seasonalData = [
     {
         season: 'Spring',
@@ -98,7 +89,7 @@ const SeasonalDietSection = ({ data }) => (
 // --- Main Page Component ---
 export default function SeasonalEatingGuidePage() {
 
-const {aiResponseDiet, setAIResponseDiet} = useAppContext();
+const {aiResponseDiet} = useAppContext();
     return (
         <main className="bg-stone-50 font-sans p-4 md:p-8">
             <div className="max-w-5xl mx-auto space-y-12">

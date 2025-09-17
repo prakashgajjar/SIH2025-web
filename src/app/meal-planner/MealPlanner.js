@@ -12,11 +12,8 @@ import {
   CheckSquare,
   Sunrise,
   Moon,
-  Sparkles,
 } from "lucide-react";
-import MealPlanResultsPage from "./MealPlanDisplay";
 import MealPlanDisplay from "./MealPlanDisplay";
-import { useAppContext } from "@/hoocks/appContext";
 
 const MealPlannerForm = () => {
   const [ aiResponseDiet, setAIResponseDiet ] = useState(null)
@@ -89,11 +86,6 @@ const MealPlannerForm = () => {
     }
   };
 
-  const mealIcons = {
-    breakfast: <Sunrise className="w-6 h-6 text-amber-500" />,
-    lunch: <Sun className="w-6 h-6 text-orange-500" />,
-    dinner: <Moon className="w-6 h-6 text-indigo-500" />,
-  };
 
   return (
     <section className="py-12 bg-white rounded-xl text-black shadow-lg p-8">
