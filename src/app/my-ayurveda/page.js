@@ -136,7 +136,7 @@ export default function AyurvedicDietGuidePage() {
                 {/* What is Ayurveda? */}
                 <section className="py-12">
                     <h2 className="text-3xl font-bold text-center mb-6">What is the Ayurvedic Diet?</h2>
-                    <p className="text-lg leading-relaxed text-gray-700">The Ayurvedic diet is a holistic system of eating that originated in India thousands of years ago. It's not a one-size-fits-all plan; instead, it's a mindful approach to food that is tailored to your unique constitutional type, known as your <span className="font-semibold">dosha</span>. The core idea is that food is medicine, and by eating in harmony with your dosha and the rhythms of nature, you can achieve optimal health, prevent disease, and support a balanced mind and body.</p>
+                    <p className="text-lg leading-relaxed text-gray-700">The Ayurvedic diet is a holistic system of eating that originated in India thousands of years ago. Its not a one-size-fits-all plan; instead, its a mindful approach to food that is tailored to your unique constitutional type, known as your <span className="font-semibold">dosha</span>. The core idea is that food is medicine, and by eating in harmony with your dosha and the rhythms of nature, you can achieve optimal health, prevent disease, and support a balanced mind and body.</p>
                 </section>
 
                 {/* The Three Doshas */}

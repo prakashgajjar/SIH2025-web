@@ -72,7 +72,7 @@ export default function Home() {
         <section className="py-20 bg-[#f3f8f6]">
             <div className="max-w-5xl mx-auto px-6">
                 <SectionHeader 
-                    title="Check Your Meal's Compatibility in Seconds"
+                    title="Check Your Meals Compatibility in Seconds"
                     subtitle="Our core tool helps you quickly assess if your current meal is beneficial for you. Simply describe your food and select the current season to get instant Ayurvedic feedback."
                 />
                 {/* MealForm is now framed within a proper section */}

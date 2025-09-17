@@ -287,7 +287,7 @@ const MealPlannerForm = () => {
               className="w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
             ></textarea>
             <p className="text-xs text-gray-500 mt-1">
-              List foods that don't agree with you
+              List foods that dont agree with you
             </p>
           </div>
         </div>

@@ -3,6 +3,7 @@
 
 import { useState, useMemo } from 'react';
 import { Search, UtensilsCrossed, Filter, Clock, Users, Soup, Wheat, Leaf } from 'lucide-react';
+import Image from 'next/image';
 
 // --- DUMMY DATA ---
 // In a real app, this would come from an API
@@ -65,7 +66,7 @@ const allRecipes = [
 
 const RecipeCard = ({ recipe }) => (
     <div className="bg-white text-black rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
-        <img src={recipe.image} alt={recipe.title} className="w-full h-40 object-cover" />
+        <Image src={recipe.image} alt={recipe.title} width={300} height={300} className="w-full h-40 object-cover" />
         <div className="p-4">
             <h3 className="text-lg font-bold text-green-800 hover:text-green-600 cursor-pointer">{recipe.title}</h3>
             <p className="text-sm text-gray-600 mt-1 mb-3">{recipe.description}</p>

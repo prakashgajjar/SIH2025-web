@@ -4,6 +4,7 @@
 import MealPlannerForm from './MealPlanner';
 import MealPlanResultsPage from './MealPlanDisplay';
 import { useAppContext } from '@/hoocks/appContext';
+import Image from 'next/image';
 
 
 const seasonalData = [
@@ -55,7 +56,7 @@ const SeasonalDietSection = ({ data }) => (
         <h2 className="text-3xl font-bold text-gray-800">Ayurvedic Diet for {data.season} <span className="text-gray-600 font-medium">({data.dosha})</span></h2>
         <p className="mt-2 text-gray-500">{data.qualities}</p>
         <div className="my-6 bg-white p-6 rounded-lg shadow-sm text-center">
-            <img src={data.illustration} alt={`${data.season} Ayurvedic Foods`} className="max-w-md mx-auto" />
+            <Image src={data.illustration} alt={`${data.season} Ayurvedic Foods`} width={300} height={300} className="max-w-md mx-auto" />
         </div>
         <div className="grid md:grid-cols-3 gap-8 mt-6">
             <div>
@@ -153,7 +154,7 @@ const {aiResponseDiet} = useAppContext();
 
                 <section>
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Final Thoughts</h2>
-                    <p className="text-gray-700 leading-relaxed">Seasonal eating is a core Ayurvedic practice for maintaining balance and vitality throughout the year. By aligning your diet with the rhythms of nature — and listening to your body's signals — you can support digestion, immunity, and overall well-being. Start with simple changes. Notice how your body responds, and adapt your meals to bring more harmony into each season of life.</p>
+                    <p className="text-gray-700 leading-relaxed">Seasonal eating is a core Ayurvedic practice for maintaining balance and vitality throughout the year. By aligning your diet with the rhythms of nature — and listening to your bodys signals — you can support digestion, immunity, and overall well-being. Start with simple changes. Notice how your body responds, and adapt your meals to bring more harmony into each season of life.</p>
                 </section>
             </div>
         </main>
