@@ -1,8 +1,11 @@
 import React from 'react'
+import LearningHub from './LearningHub'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <LearningHub/>
+    </div>
   )
 }
 

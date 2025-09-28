@@ -1,14 +1,14 @@
-// components/MealForm.jsx
 "use client";
 
 import { useState } from "react";
-import { Utensils, CalendarDays, Search } from "lucide-react";
+import { Utensils, CalendarDays, Search, Loader2 } from "lucide-react";
 import MealResultPage from "./MealResultPage";
 
 const MealForm = () => {
   const [mealDescription, setMealDescription] = useState("");
   const [currentSeason, setCurrentSeason] = useState("");
   const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +16,9 @@ const MealForm = () => {
       alert("Please fill out all fields.");
       return;
     }
+
+    setLoading(true);
+    setResponse(null); // clear previous response
 
     try {
       const res = await fetch("/api/check-meal", {
@@ -26,12 +29,11 @@ const MealForm = () => {
 
       const data = await res.json();
       setResponse(data);
-      console.log(data);
-
-      // Redirect with response data
     } catch (error) {
       console.error("Error:", error);
       alert("Something went wrong.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -87,27 +89,34 @@ const MealForm = () => {
               </div>
               <p className="mt-3 text-sm text-gray-500">
                 Seasonal guidance helps provide more accurate Ayurvedic
-                recommendations for your body current needs.
+                recommendations for your body’s current needs.
               </p>
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full flex items-center justify-center px-6 py-4 text-lg font-semibold text-white bg-gradient-to-r from-teal-500 to-green-600 rounded-lg shadow-lg hover:from-teal-600 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 ease-in-out"
+              disabled={loading}
+              className="w-full flex items-center justify-center px-6 py-4 text-lg font-semibold text-white bg-gradient-to-r from-teal-500 to-green-600 rounded-lg shadow-lg hover:from-teal-600 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 ease-in-out disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <Search className="w-6 h-6 mr-3" />
-              CHECK MY MEAL
+              {loading ? (
+                <>
+                  <Loader2 className="w-6 h-6 mr-3 animate-spin" />
+                  Checking...
+                </>
+              ) : (
+                <>
+                  <Search className="w-6 h-6 mr-3" />
+                  CHECK MY MEAL
+                </>
+              )}
             </button>
           </form>
         </div>
       </div>
-      <div>
-      {
-       response && <MealResultPage result={response} />
-      }
-        
-      </div>
+
+      {/* Show Results */}
+      <div>{response && <MealResultPage result={response} />}</div>
     </div>
   );
 };

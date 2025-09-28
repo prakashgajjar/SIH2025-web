@@ -13,7 +13,7 @@ export async function POST(req) {
     const { symptoms } = await req.json();
     // console.log(symptoms);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // --- Re-engineered AI Prompt ---
     // The prompt now asks the AI to first deduce the imbalance from the symptoms.
