@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const teamMembers = [
   { name: "Prakash Suthar", role: "Team Leader" },
@@ -12,14 +13,18 @@ const teamMembers = [
   { name: "Modi Purav", role: "Developer" },
 ];
 
+
+
 export default function Footer() {
+
+  const router = useRouter();
   return (
     <footer className="bg-[#fffaf5] border-t border-gray-200 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
 
         {/* Brand Section */}
         <div className="text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start mb-4">
+          <div className="flex items-center justify-center md:justify-start mb-4" >
             <Image
               src="/images/i1.png"
               alt="Innovatrix Logo"

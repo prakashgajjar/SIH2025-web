@@ -14,7 +14,6 @@ const navLinks = [
   { name: "Recipes", href: "recipes" },
   { name: "Learning Hub", href: "learn" },
   { name: "My Ayurveda", href: "my-ayurveda" },
-
 ];
 
 export default function Header() {
@@ -24,14 +23,14 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-                      <Image
-                        src="/images/i1.png"
-                        alt="Innovatrix Logo"
-                        width={35}
-                        height={35}
-                        className="rounded-full shadow-md"
-                      />
+        <Link href="https://youtu.be/3R4kG-ypKPk?si=D-3EMeYsAxdzu6A9" className="flex items-center space-x-2">
+          <Image
+            src="/images/i1.png"
+            alt="Innovatrix Logo"
+            width={35}
+            height={35}
+            className="rounded-full shadow-md"
+          />
           <span className="text-xl font-bold text-gray-800">AyurVeda Life</span>
         </Link>
 
