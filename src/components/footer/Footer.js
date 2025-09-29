@@ -23,8 +23,8 @@ export default function Footer() {
             <Image
               src="/images/i1.png"
               alt="Innovatrix Logo"
-              width={80}
-              height={80}
+              width={60}
+              height={60}
               className="rounded-full shadow-md"
             />
             <span className="ml-3 text-xl font-bold text-gray-800">

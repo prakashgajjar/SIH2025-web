@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Leaf, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Food Checker", href: "/" },
@@ -13,6 +14,7 @@ const navLinks = [
   { name: "Recipes", href: "recipes" },
   { name: "Learning Hub", href: "learn" },
   { name: "My Ayurveda", href: "my-ayurveda" },
+
 ];
 
 export default function Header() {
@@ -23,7 +25,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Leaf className="h-8 w-8 text-green-600" />
+                      <Image
+                        src="/images/i1.png"
+                        alt="Innovatrix Logo"
+                        width={35}
+                        height={35}
+                        className="rounded-full shadow-md"
+                      />
           <span className="text-xl font-bold text-gray-800">AyurVeda Life</span>
         </Link>
 
